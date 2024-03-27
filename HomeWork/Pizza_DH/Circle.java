@@ -13,7 +13,9 @@ public class Circle implements Ishape {
 
     @Override
     public String toString() {
-        return "Circle with radius: " + radius;
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
     }
 }
 

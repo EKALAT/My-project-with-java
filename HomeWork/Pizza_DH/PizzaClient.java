@@ -1,29 +1,19 @@
 package Pizza_DH;
 
     public class PizzaClient {
-        public void run() {
-            Circle circle = new Circle(10);
-            Rectangle rectangle = new Rectangle(15, 8);
-
-            Pizza pizza1 = new Pizza(12.99, circle);
-            Pizza pizza2 = new Pizza(14.50, rectangle);
-
-            System.out.println(pizza1);
-            System.out.println(pizza2);
-
-            PizzaDeal deal = new PizzaDeal();
-            double dealPrice1 = deal.deal(pizza1);
-            double dealPrice2 = deal.deal(pizza2);
-
-            System.out.println("Deal price for pizza 1: $" + dealPrice1);
-            System.out.println("Deal price for pizza 2: $" + dealPrice2);
-
-            Pizza betterDeal = deal.betterDeal(pizza1, pizza2);
-            System.out.println("The better deal is: " + betterDeal);
+        static void run() {
+            Ishape c1 = new Circle(5);
+            Pizza p1 = new Pizza(10, c1);
+            Ishape c2 = new Circle(6);
+            Pizza p2 = new Pizza(11, c2);
+            PizzaDeal pizzaDeal = new PizzaDeal();
+            if(pizzaDeal.betterDeal(p1,p2)) {
+                System.out.println(p1 + "is better than:" + p2);
+            }else{
+                System.out.println(p2+ "is better than:" + p1);
+            }
         }
-
-        public static void main(String[] args) {
-            PizzaClient client = new PizzaClient();
-            client.run();
+        public static void main(String[]args){
+            run();
         }
     }
